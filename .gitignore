@@ -10,3 +10,5 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
+/spec/bowling_specs/micahs_bowling_spec.clj
+/src/bowling/micahs_bowling.clj

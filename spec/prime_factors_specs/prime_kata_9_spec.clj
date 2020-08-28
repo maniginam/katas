@@ -1,6 +1,6 @@
 (ns prime-factors-specs.prime-kata-9-spec
     (:require [speclj.core :refer :all]
-      [prime-kata-9 :refer :all]))
+      [prime-factors.prime-kata-9 :refer :all]))
 
 (describe "prime-kata attempt 9 8.16.2020 time: 5:05.74--had kids around, so longer than yesterday..."
           (it "finds all prime factors of n"

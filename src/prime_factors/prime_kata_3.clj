@@ -1,4 +1,4 @@
-(ns prime-kata-3)
+(ns prime-factors.prime-kata-3)
 
 (defn prime-factors [n]
   (loop [n n

@@ -1,6 +1,6 @@
 (ns prime-factors-specs.prime-kata-7-spec
     (:require [speclj.core :refer :all]
-      [prime-kata-7 :refer :all]))
+      [prime-factors.prime-kata-7 :refer :all]))
 
 (describe "prime kata 7 8.14.2020 time: 5:19:42 and mom called and texted in the middle!
           and i found a new test point before 6--must return [n] before (conj primes n)"

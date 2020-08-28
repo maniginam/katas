@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/prime-kata-clj.iml" filepath="$PROJECT_DIR$/prime-kata-clj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/katas.clj.iml" filepath="$PROJECT_DIR$/katas.clj.iml" />
     </modules>
   </component>
 </project>

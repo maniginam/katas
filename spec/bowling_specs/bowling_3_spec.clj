@@ -24,5 +24,7 @@
   (it "bowls perfect game"
     (should= 300 (score (roll-full-game 10))))
 
+  (it "bowls strike then 0"
+    (should= 44 (score (roll-rest-of-game [10 0 10 5 4] 0))))
 
   )
