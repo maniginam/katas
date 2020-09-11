@@ -1,4 +1,4 @@
-(ns prime-kata-12-spec
+(ns prime-factors-specs.prime-kata-12-spec
   (:require [speclj.core :refer :all]
             [prime-factors.prime-kata-12 :refer :all]))
 
