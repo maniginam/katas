@@ -2,17 +2,24 @@
   (:require [speclj.core :refer :all]
             [coin-changer :refer :all]))
 
-(describe "Coin Changer"
+(describe "Coin Changer:"
 
-  (it "Turns Pennies into Fewest Coins"
-    (should= [] (change 0))
-    (should= [1] (change 1))
-    (should= [1 1] (change 2))
-    (should= [1 1 1] (change 3))
-    (should= [5] (change 5))
-    (should= [5 1] (change 6))
-    (should= [10] (change 10))
-    (should= [10 5 1 1] (change 17))
-    (should= [25] (change 25))
-    (should= [25 25 10 5 1 1] (change 67))
-    ))
+  (for [[pennies coins]
+        [
+         [0 []]
+         [1 [1]]
+         [2 [1 1]]
+         [3 [1 1 1]]
+         [5 [5]]
+         [6 [5 1]]
+         [10 [10]]
+         [11 [10 1]]
+         [17 [10 5 1 1]]
+         [25 [25]]
+         [67 [25 25 10 5 1 1]]
+         [99 [25 25 25 10 10 1 1 1 1]]
+        ]]
+
+    (it (str (count coins) (if (= 1 (count coins)) " coin for " " coins for ") pennies (if (= 1 pennies) " penny" " pennies"))
+      (should= coins (coin-changer pennies))))
+  )
