@@ -1,4 +1,4 @@
-(ns game-of-life.core-spec
+(ns game-of-life.core-specs
   (:require [speclj.core :refer :all]
             [game-of-life.core :refer :all]))
 
@@ -17,7 +17,7 @@
   (it "Evolves a Lonely World"
     (should= dead-world (evolve lonely-world)))
 
-  (it "Evolves a Couple's World World"
+  (it "Evolves a Couple's World"
     (should= dead-world (evolve couples-world)))
 
   (it "Evolves a Diagonal World"
@@ -26,17 +26,19 @@
   (it "Evolves a Block World"
     (should= block-world (evolve block-world)))
 
-  (it "Evolves an L-World"
+  (it "Evolves an L World"
     (should= block-world (evolve L-world))))
 
-(describe "The Evolution of Life"
+(describe "Gets to Know the Neighbors"
 
   (it "Gets a Cell's Neighbors"
     (should= #{[-1 1] [0 1] [1 1]
                [-1 0] [1 0]
                [-1 -1] [0 -1] [1 -1]} (get-neighbors [0 0])))
 
-  (it "Counts the Neighbors"
+  (it "Counts Live Neighbors"
+    (should= 0 (count-neighbors dead-world [0 0]))
     (should= 0 (count-neighbors lonely-world [0 0]))
     (should= 1 (count-neighbors couples-world [0 0]))
-    (should= 2 (count-neighbors diagonal-world [0 0]))))
+    (should= 2 (count-neighbors diagonal-world [0 0]))
+    (should= 3 (count-neighbors block-world [0 0]))))

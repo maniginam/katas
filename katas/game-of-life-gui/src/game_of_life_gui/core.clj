@@ -1,7 +1,7 @@
-(ns gol-quil.core
+(ns game-of-life-gui.core
   (:require [quil.core :as q]
             [quil.middleware :as m]
-            [game-of-life.core :as life]
+            [game_of_life.core :as life]
             [clojure.set :as set]))
 
 (defn setup []
@@ -57,29 +57,30 @@
                          y (range (- min-cell 2) (+ 4 max-cell))]
                      [x y])
         all-cells (set/union live-cells dead-cells)]
-  (doseq [cell all-cells]
-    (let [center (/ 500 2)
-          cell-size (* 0.8 (:cell-size state))
-          cell-radius (/ cell-size 2)
-          x (+ center (- (* (first cell) cell-size) cell-radius))
-          y (+ center (- (* (second cell) cell-size) cell-radius))]
-      (if (contains? live-cells cell)
-        (q/fill 0 255 0)
-        (q/fill 0 0 0))
-      (q/ellipse x y cell-size cell-size))))
+    (doseq [cell all-cells]
+      (let [center (/ 500 2)
+            cell-size (:cell-size state)
+            cell-radius (/ cell-size 2)
+            x (+ center (- (* (first cell) cell-size) cell-radius))
+            y (+ center (- (* (second cell) cell-size) cell-radius))]
+        (if (contains? live-cells cell)
+          (q/fill 0 255 0)
+          (q/fill 0 0 0))
+        (q/stroke 240)
+        (q/rect x y cell-size cell-size))))
   )
 
 
-(q/defsketch gol-quil
-  :title "The Game of Life"
-  :size [500 500]
-  ; setup function called only once, during sketch initialization.
-  :setup setup
-  ; update-state is called on each iteration before draw-state.
-  :update update-state
-  :draw draw-state
-  :features [:keep-on-top]
-  ; This sketch uses functional-mode middleware.
-  ; Check quil wiki for more info about middlewares and particularly
-  ; fun-mode.
-  :middleware [m/fun-mode])
+(q/defsketch game-of-life-gui
+             :title "The Game of Life"
+             :size [500 500]
+             ; setup function called only once, during sketch initialization.
+             :setup setup
+             ; update-state is called on each iteration before draw-state.
+             :update update-state
+             :draw draw-state
+             :features [:keep-on-top]
+             ; This sketch uses functional-mode middleware.
+             ; Check quil wiki for more info about middlewares and particularly
+             ; fun-mode.
+             :middleware [m/fun-mode])

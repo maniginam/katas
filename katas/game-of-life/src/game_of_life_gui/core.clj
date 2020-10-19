@@ -1,4 +1,4 @@
-(ns gol-quil.core
+(ns game-of-life-gui.core
   (:require [quil.core :as q]
             [quil.middleware :as m]
             [game-of-life.core :as life]
@@ -71,7 +71,7 @@
   )
 
 
-(q/defsketch gol-quil
+(q/defsketch game-of-life-gui
              :title "The Game of Life"
              :size [500 500]
              ; setup function called only once, during sketch initialization.
@@ -84,3 +84,4 @@
              ; Check quil wiki for more info about middlewares and particularly
              ; fun-mode.
              :middleware [m/fun-mode])
+
