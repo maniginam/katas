@@ -1,32 +1,48 @@
 (ns game-of-life.core
-  (:require [clojure.set :as set]))
+  (:require [quil.core :as q]
+            [quil.middleware :as m]))
 
-(defn get-neighbors [[x y]]
-  #{[(dec x) (inc y)] [x (inc y)] [(inc x) (inc y)]
-    [(dec x) y] [(inc x) y]
-    [(dec x) (dec y)] [x (dec y)] [(inc x) (dec y)]})
+(defn setup []
+  ; Set frame rate to 30 frames per second.
+  (q/frame-rate 30)
+  ; Set color mode to HSB (HSV) instead of default RGB.
+  (q/color-mode :hsb)
+  ; setup function returns initial state. It contains
+  ; circle color and position.
+  {:color 0
+   :angle 0})
 
-(defn count-neighbors [live-cells address]
-  (count (filter live-cells (get-neighbors address))))
+(defn update-state [state]
+  ; Update sketch state by changing circle color and position.
+  {:color (mod (+ (:color state) 0.7) 255)
+   :angle (+ (:angle state) 0.1)})
 
-(defn evolve-cell [world [address count]]
-  (cond (= count 3) address
-        (and (contains? world address) (= count 2)) address
-        :else nil))
+(defn draw-state [state]
+  ; Clear the sketch by filling it with light-grey color.
+  (q/background 240)
+  ; Set circle color.
+  (q/fill (:color state) 255 255)
+  ; Calculate x and y coordinates of the circle.
+  (let [angle (:angle state)
+        x (* 150 (q/cos angle))
+        y (* 150 (q/sin angle))]
+    ; Move origin point to the center of the sketch.
+    (q/with-translation [(/ (q/width) 2)
+                         (/ (q/height) 2)]
+      ; Draw the circle.
+      (q/ellipse x y 100 100))))
 
-(defn evolve-each-cell [world cells]
-  (loop [cells cells
-         new-world #{}]
-    (if (empty? cells)
-      new-world
-      (let [[address count] (first cells)
-            evolved-cell (evolve-cell world [address count])]
-        (if (nil? evolved-cell)
-          (recur (rest cells) new-world)
-          (recur (rest cells) (conj new-world address)))))))
 
-(defn evolve [world]
-  (let [neighbors (mapcat #(get-neighbors %) world)
-        addresses-to-evolve (set/union world neighbors)
-        cells-to-evolve (map #(vector % (count-neighbors world %)) addresses-to-evolve)]
-    (evolve-each-cell world cells-to-evolve)))
+(q/defsketch game-of-life
+  :title "You spin my circle right round"
+  :size [500 500]
+  ; setup function called only once, during sketch initialization.
+  :setup setup
+  ; update-state is called on each iteration before draw-state.
+  :update update-state
+  :draw draw-state
+  :features [:keep-on-top]
+  ; This sketch uses functional-mode middleware.
+  ; Check quil wiki for more info about middlewares and particularly
+  ; fun-mode.
+  :middleware [m/fun-mode])

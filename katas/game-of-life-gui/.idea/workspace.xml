@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="54f057b3-a28c-45bb-aef5-a585ef0aa7c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../game-of-life/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../game-of-life/.idea/libraries/Clojure_1_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../game-of-life/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../game-of-life/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../game-of-life/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../game-of-life/game-of-life.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life-old/.idea/libraries/Leiningen__clojure_complete_0_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life-old/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life-old/game-of-life.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life-old/src/game_of_life/core_old.clj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__org_clojure_clojure_1_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__org_clojure_core_specs_alpha_0_2_44.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__org_clojure_spec_alpha_0_2_176.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gol/spec/game_of_life/core_spec.clj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gol/src/game_of_life/core.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../coin-changer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../coin-changer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../coin-changer/project.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../coin-changer/spec/coin_changer/core_spec.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../coin-changer/src/coin_changer/core.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ClojureProjectResolveSettings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__bouncycastle_bcmail_jdk14_138.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__bouncycastle_bcprov_jdk14_138.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__cljsjs_p5_0_9_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__clojure_complete_0_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_lowagie_itext_2_1_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__nrepl_0_6_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_awt_util_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_css_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_dom_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_ext_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_svggen_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_util_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_xmlgraphics_batik_xml_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_bouncycastle_bcmail_jdk14_1_38.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_bouncycastle_bcprov_jdk14_1_38.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_bouncycastle_bctsp_jdk14_1_38.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_clojure_1_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_specs_alpha_0_2_44.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_spec_alpha_0_2_176.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_gluegen_rt_fat_2_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_jogl_all_fat_2_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_processing_core_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_processing_dxf_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_processing_pdf_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__quil_processing_svg_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__xalan_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__xml_apis_1_3_04.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__xml_apis_xml_apis_ext_1_3_04.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-of-life-gui.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_of_life_gui/core.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../game-of-life-old/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__fresh_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__mmargs_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__org_clojure_clojure_1_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__speclj_3_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.idea/libraries/Leiningen__trptcolin_versioneer_0_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../game-of-life-old/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../game-of-life-old/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/game-of-life.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../game-of-life/game-of-life.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/../game-of-life-old/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/spec/game_of_life/core_specs.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/src/game_of_life/core.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game-of-life/src/game_of_life_gui/core.clj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gol/gol.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../gol/gol.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spec/coin_changer_specs.clj" beforeDir="false" afterPath="$PROJECT_DIR$/../../spec/coin_changer_specs.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/coin_changer.clj" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/coin_changer.clj" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ixrVXsoWSlpmY5vupiQw69jUkJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="replPortFileType" value="STANDARD" />
+      <setting name="customPortFile" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="game-of-life-gui.core" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="game-of-life-gui" />
+      <setting name="path" value="$PROJECT_DIR$/src/game_of_life_gui/core.clj" />
+      <setting name="namespace" value="" />
+      <setting name="execution" value="INTELLIJ" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/game_of_life_gui" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure Application.game-of-life-gui.core" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54f057b3-a28c-45bb-aef5-a585ef0aa7c2" name="Default Changelist" comment="" />
+      <created>1602860107271</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602860107271</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="208" y="-867" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602861106802">
+      <screen x="-219" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="208" y="-867" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/-219.-1057.1920.1057/0.23.1440.825@-219.-1057.1920.1057" timestamp="1602861106802" />
+    <state width="1872" height="282" key="GridCell.Tab.0.bottom" timestamp="1602861833469">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1872" height="282" key="GridCell.Tab.0.bottom/-219.-1057.1920.1057/0.23.1440.825@0.23.1440.825" timestamp="1602861833469" />
+    <state width="1872" height="282" key="GridCell.Tab.0.center" timestamp="1602861833469">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1872" height="282" key="GridCell.Tab.0.center/-219.-1057.1920.1057/0.23.1440.825@0.23.1440.825" timestamp="1602861833469" />
+    <state width="1872" height="282" key="GridCell.Tab.0.left" timestamp="1602861833468">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1872" height="282" key="GridCell.Tab.0.left/-219.-1057.1920.1057/0.23.1440.825@0.23.1440.825" timestamp="1602861833468" />
+    <state width="1872" height="282" key="GridCell.Tab.0.right" timestamp="1602861833469">
+      <screen x="0" y="23" width="1440" height="825" />
+    </state>
+    <state width="1872" height="282" key="GridCell.Tab.0.right/-219.-1057.1920.1057/0.23.1440.825@0.23.1440.825" timestamp="1602861833469" />
+    <state x="440" y="-1007" key="SettingsEditor" timestamp="1604419628417">
+      <screen x="232" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="440" y="-1007" key="SettingsEditor/232.-1417.2560.1417/0.23.1440.826@232.-1417.2560.1417" timestamp="1604419628417" />
+    <state x="147" y="23" key="new project wizard" timestamp="1604504251989">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state x="147" y="23" key="new project wizard/232.-1417.2560.1417/0.23.1440.826@0.23.1440.826" timestamp="1604504251989" />
+  </component>
+</project>

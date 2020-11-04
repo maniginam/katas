@@ -11,10 +11,9 @@
          [5 [5]]
          [6 [5 1]]
          [10 [10]]
-         [11 [10 1]]
          [17 [10 5 1 1]]
          [25 [25]]
          [91 [25 25 25 10 5 1]]
          ]]
-    (it (str "changes " pennies (if (= 1 pennies) " penny " " pennies to ") (count coins) (if (= (count coins) 1) " coin" " coins"))
+    (it (str "changes " pennies (if (= 1 pennies) " penny to " " pennies to ") (count coins) (if (= 1 (count coins)) " coin" " coins"))
       (should= coins (coin-changer pennies)))))

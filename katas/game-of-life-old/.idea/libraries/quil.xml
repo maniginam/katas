@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="quil">
+    <CLASSES>
+      <root url="file://$MAVEN_REPOSITORY$/quil" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
