@@ -4,11 +4,14 @@
             [game-of-life :as life]
             [clojure.set :as set]))
 
+(def new-world (atom [[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]]))
+
 (defn setup []
   (q/frame-rate 10)
   (q/color-mode :rgb)
-  {:live-cells #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]}
-   :cell-size 5})
+  {:live-cells (set @new-world)
+   ;:live-cells #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]}
+   :cell-size  5})
 
 (defn get-x-min [state]
   (let [world (:live-cells state)
@@ -41,9 +44,9 @@
 
 (defn update-state [state]
   {:live-cells (life/evolve (:live-cells state))
-   :x-range [(get-x-min state) (get-x-max state)]
-   :y-range [(get-y-min state) (get-y-max state)]
-   :cell-size (/ 500 (get-max-cell-count state))})
+   :x-range    [(get-x-min state) (get-x-max state)]
+   :y-range    [(get-y-min state) (get-y-max state)]
+   :cell-size  (/ 500 (get-max-cell-count state))})
 
 (defn draw-state [state]
   (q/background 240)
@@ -69,7 +72,9 @@
   )
 
 
-(q/defsketch gui
+(defn -main [& args]
+  (reset! new-world world)
+  (q/defsketch gui
              :title "The Game of Life"
              :size [500 500]
              ; setup function called only once, during sketch initialization.
@@ -81,4 +86,5 @@
              ; This sketch uses functional-mode middleware.
              ; Check quil wiki for more info about middlewares and particularly
              ; fun-mode.
-             :middleware [m/fun-mode])
+             :middleware [m/fun-mode]))
+
