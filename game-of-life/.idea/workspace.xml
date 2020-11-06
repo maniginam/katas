@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a65375a-6925-443f-8bb7-4f82cb85610f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ClojureProjectResolveSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clojure_complete_0_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__fresh_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__mmargs_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__nrepl_0_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__speclj_3_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__trptcolin_versioneer_0_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-of-life.iml" beforeDir="false" afterPath="$PROJECT_DIR$/game-of-life.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/core_spec.clj" beforeDir="false" afterPath="$PROJECT_DIR$/spec/core_spec.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game_of_life.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_of_life.clj" afterDir="false" />
@@ -81,58 +91,10 @@
       <setting name="fixLineNumbers" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="gui (2)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="game-of-life" />
-      <setting name="path" value="" />
-      <setting name="namespace" value="gui" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gui (3)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="game-of-life" />
-      <setting name="path" value="" />
-      <setting name="namespace" value="gui" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gui (4)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="game-of-life" />
-      <setting name="path" value="" />
-      <setting name="namespace" value="gui" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gui (5)" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
-      <module name="game-of-life" />
-      <setting name="path" value="" />
-      <setting name="namespace" value="gui" />
-      <setting name="execution" value="INTELLIJ" />
-      <setting name="profiles" value="" />
-      <setting name="aliases" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
     <configuration name="gui" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
       <module name="game-of-life" />
-      <setting name="path" value="" />
-      <setting name="namespace" value="gui" />
+      <setting name="path" value="$PROJECT_DIR$/src/gui.clj" />
+      <setting name="namespace" value="" />
       <setting name="execution" value="INTELLIJ" />
       <setting name="profiles" value="" />
       <setting name="aliases" value="" />
@@ -197,20 +159,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Leiningen.specs" />
-      <item itemvalue="Clojure Application.gui (2)" />
-      <item itemvalue="Clojure Application.gui (3)" />
-      <item itemvalue="Clojure Application.gui (4)" />
-      <item itemvalue="Clojure Application.gui (5)" />
       <item itemvalue="Clojure Application.gui" />
+      <item itemvalue="Leiningen.specs" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Clojure Application.gui" />
-        <item itemvalue="Clojure Application.gui (5)" />
-        <item itemvalue="Clojure Application.gui (4)" />
-        <item itemvalue="Clojure Application.gui (3)" />
-        <item itemvalue="Clojure Application.gui (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -226,35 +180,68 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="98" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604509202859">
-      <screen x="0" y="23" width="1440" height="829" />
+    <state x="26" y="-982" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604686005682">
+      <screen x="-219" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="26" y="-982" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604686005682" />
     <state x="184" y="98" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/232.-1417.2560.1417/0.23.1440.826@0.23.1440.826" timestamp="1604504335296" />
     <state x="184" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/232.-1417.2560.1417/0.23.1440.829@0.23.1440.829" timestamp="1604509202859" />
-    <state width="644" height="1085" key="GridCell.Tab.0.bottom" timestamp="1604530003049">
-      <screen x="232" y="-1440" width="2560" height="1440" />
+    <state width="502" height="914" key="GridCell.Tab.0.bottom" timestamp="1604692155190">
+      <screen x="-219" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="502" height="914" key="GridCell.Tab.0.bottom/-219.-1057.1920.1057/0.23.1440.827@-219.-1057.1920.1057" timestamp="1604692155190" />
+    <state width="502" height="914" key="GridCell.Tab.0.bottom/-219.-1057.1920.1057/0.23.1440.828@-219.-1057.1920.1057" timestamp="1604692081083" />
+    <state width="502" height="959" key="GridCell.Tab.0.bottom/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604691057482" />
+    <state width="502" height="959" key="GridCell.Tab.0.bottom/-219.-1080.1920.1080/0.23.1440.877@-219.-1080.1920.1080" timestamp="1604690169020" />
     <state width="348" height="683" key="GridCell.Tab.0.bottom/232.-1417.2560.1417/0.23.1440.827@0.23.1440.827" timestamp="1604521354008" />
     <state width="754" height="683" key="GridCell.Tab.0.bottom/232.-1417.2560.1417/0.23.1440.829@0.23.1440.829" timestamp="1604511406608" />
-    <state width="644" height="1085" key="GridCell.Tab.0.bottom/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530003049" />
-    <state width="644" height="1085" key="GridCell.Tab.0.center" timestamp="1604530003047">
-      <screen x="232" y="-1440" width="2560" height="1440" />
+    <state width="644" height="1085" key="GridCell.Tab.0.bottom/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530473629" />
+    <state width="502" height="914" key="GridCell.Tab.0.center" timestamp="1604692155189">
+      <screen x="-219" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="502" height="914" key="GridCell.Tab.0.center/-219.-1057.1920.1057/0.23.1440.827@-219.-1057.1920.1057" timestamp="1604692155189" />
+    <state width="502" height="914" key="GridCell.Tab.0.center/-219.-1057.1920.1057/0.23.1440.828@-219.-1057.1920.1057" timestamp="1604692081083" />
+    <state width="502" height="959" key="GridCell.Tab.0.center/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604691057481" />
+    <state width="502" height="959" key="GridCell.Tab.0.center/-219.-1080.1920.1080/0.23.1440.877@-219.-1080.1920.1080" timestamp="1604690169018" />
     <state width="348" height="683" key="GridCell.Tab.0.center/232.-1417.2560.1417/0.23.1440.827@0.23.1440.827" timestamp="1604521354007" />
     <state width="754" height="683" key="GridCell.Tab.0.center/232.-1417.2560.1417/0.23.1440.829@0.23.1440.829" timestamp="1604511406607" />
-    <state width="644" height="1085" key="GridCell.Tab.0.center/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530003047" />
-    <state width="644" height="1085" key="GridCell.Tab.0.left" timestamp="1604530003046">
-      <screen x="232" y="-1440" width="2560" height="1440" />
+    <state width="644" height="1085" key="GridCell.Tab.0.center/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530473628" />
+    <state width="502" height="914" key="GridCell.Tab.0.left" timestamp="1604692155189">
+      <screen x="-219" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="502" height="914" key="GridCell.Tab.0.left/-219.-1057.1920.1057/0.23.1440.827@-219.-1057.1920.1057" timestamp="1604692155189" />
+    <state width="502" height="914" key="GridCell.Tab.0.left/-219.-1057.1920.1057/0.23.1440.828@-219.-1057.1920.1057" timestamp="1604692081083" />
+    <state width="502" height="959" key="GridCell.Tab.0.left/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604691057480" />
+    <state width="502" height="959" key="GridCell.Tab.0.left/-219.-1080.1920.1080/0.23.1440.877@-219.-1080.1920.1080" timestamp="1604690169018" />
     <state width="348" height="683" key="GridCell.Tab.0.left/232.-1417.2560.1417/0.23.1440.827@0.23.1440.827" timestamp="1604521354006" />
     <state width="754" height="683" key="GridCell.Tab.0.left/232.-1417.2560.1417/0.23.1440.829@0.23.1440.829" timestamp="1604511406607" />
-    <state width="644" height="1085" key="GridCell.Tab.0.left/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530003046" />
-    <state width="644" height="1085" key="GridCell.Tab.0.right" timestamp="1604530003048">
-      <screen x="232" y="-1440" width="2560" height="1440" />
+    <state width="644" height="1085" key="GridCell.Tab.0.left/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530473627" />
+    <state width="502" height="914" key="GridCell.Tab.0.right" timestamp="1604692155189">
+      <screen x="-219" y="-1057" width="1920" height="1057" />
     </state>
+    <state width="502" height="914" key="GridCell.Tab.0.right/-219.-1057.1920.1057/0.23.1440.827@-219.-1057.1920.1057" timestamp="1604692155189" />
+    <state width="502" height="914" key="GridCell.Tab.0.right/-219.-1057.1920.1057/0.23.1440.828@-219.-1057.1920.1057" timestamp="1604692081083" />
+    <state width="502" height="959" key="GridCell.Tab.0.right/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604691057481" />
+    <state width="502" height="959" key="GridCell.Tab.0.right/-219.-1080.1920.1080/0.23.1440.877@-219.-1080.1920.1080" timestamp="1604690169019" />
     <state width="348" height="683" key="GridCell.Tab.0.right/232.-1417.2560.1417/0.23.1440.827@0.23.1440.827" timestamp="1604521354007" />
     <state width="754" height="683" key="GridCell.Tab.0.right/232.-1417.2560.1417/0.23.1440.829@0.23.1440.829" timestamp="1604511406607" />
-    <state width="644" height="1085" key="GridCell.Tab.0.right/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530003048" />
+    <state width="644" height="1085" key="GridCell.Tab.0.right/232.-1440.2560.1440/0.0.1440.900@232.-1440.2560.1440" timestamp="1604530473629" />
+    <state width="1878" height="366" key="GridCell.Tab.1.bottom" timestamp="1604685359519">
+      <screen x="-219" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="366" key="GridCell.Tab.1.bottom/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604685359519" />
+    <state width="1878" height="366" key="GridCell.Tab.1.center" timestamp="1604685359518">
+      <screen x="-219" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="366" key="GridCell.Tab.1.center/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604685359518" />
+    <state width="1878" height="366" key="GridCell.Tab.1.left" timestamp="1604685359518">
+      <screen x="-219" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="366" key="GridCell.Tab.1.left/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604685359518" />
+    <state width="1878" height="366" key="GridCell.Tab.1.right" timestamp="1604685359519">
+      <screen x="-219" y="-1080" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="366" key="GridCell.Tab.1.right/-219.-1080.1920.1080/0.0.1440.900@-219.-1080.1920.1080" timestamp="1604685359519" />
     <state x="602" y="-1440" width="1025" height="826" key="SettingsEditor" timestamp="1604524379505">
       <screen x="232" y="-1440" width="2560" height="1440" />
     </state>

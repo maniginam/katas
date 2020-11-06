@@ -20,5 +20,3 @@
         evolved-world (remove nil? (map #(evolve-cell live-cells %) cell-map))]
     (set evolved-world)))
 
-
-

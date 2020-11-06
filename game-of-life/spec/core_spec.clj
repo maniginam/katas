@@ -24,6 +24,10 @@
       (it "a diagonal world"
         (should= lonely-world (evolve diagonal-world)))
 
+      (it "a swapping line world"
+        (should= #{[0 0] [0 -1] [0 1]} (evolve #{[-1 0] [0 0] [1 0]}))
+        (should= #{[-1 0] [0 0] [1 0]} (evolve #{[0 -1] [0 0] [0 1]})))
+
       (it "an L world"
         (should= block-world (evolve L-world)))
       )
@@ -32,5 +36,8 @@
       (it "count"
         (should= 0 (count-neighbors lonely-world [0 0])))
       )
+    ;(it "TRIAL"
+    ;  (should= #{[9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0]}
+    ;           (evolve #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]})))
 
     )

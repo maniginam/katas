@@ -1,17 +1,9 @@
 (ns gui
   (:require [quil.core :as q]
             [quil.middleware :as m]
-            [game-of-life :as life]
-            [clojure.set :as set]))
-
-(def new-world (atom [[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]]))
-
-(defn setup []
-  (q/frame-rate 10)
-  (q/color-mode :rgb)
-  {:live-cells (set @new-world)
-   ;:live-cells #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]}
-   :cell-size  5})
+            [clojure.set :as set]
+            [game-of-life :as life]))
+(def size 1040)
 
 (defn get-x-min [state]
   (let [world (:live-cells state)
@@ -37,46 +29,71 @@
         y-max (if (nil? (:y-range state)) new-max (second (:y-range state)))]
     (if (> new-max y-max) new-max y-max)))
 
-(defn get-max-cell-count [state]
-  (let [x-size (- (get-x-max state) (get-x-min state))
-        y-size (- (get-y-max state) (get-y-min state))]
+(defn get-max-cell-count [[x-range y-range]]
+  (let [x-size (- (apply max x-range) (apply min x-range))
+        y-size (- (apply max y-range) (apply min y-range))]
     (max x-size y-size)))
 
+(defn setup []
+  (q/frame-rate 1)
+  (q/color-mode :rgb)
+  (let [live-cells #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]
+                     [0 10] [0 9] [0 8] [0 7] [0 6] [0 5] [0 4] [0 3] [0 2] [0 1] [0 -1] [0 -2] [0 -3] [0 -4] [0 -5] [0 -6] [0 -7] [0 -8] [0 -9] [0 -10]
+                     [-6 5] [-5 5] [-4 5] [-5 6] [-5 4]
+                     [6 5] [5 5] [4 5] [5 6] [5 4]
+                     [-6 -5] [-5 -5] [-4 -5] [-5 -6] [-5 -4]
+                     [6 -5] [5 -5] [4 -5] [5 -6] [5 -4]
+                     ;[-7 6] [-6 6] [-5 6] [-6 7] [-5 5]
+                     ;[7 6] [6 6] [5 6] [6 7] [5 5]
+                     ;[-7 -6] [-6 -6] [-5 -6] [-6 -7] [-5 -5]
+                     ;[7 -6] [6 -6] [5 -6] [6 -7] [5 -5]
+                     }
+        xs (map first live-cells)
+        ys (map second live-cells)
+        x-range [(apply min xs) (apply max xs)]
+        y-range [(apply min ys) (apply max ys)]]
+    {;:live-cells (set @life/new-world)
+     :live-cells live-cells
+     :x-range x-range
+     :y-range y-range
+     :cell-size (/ (- size 100) (get-max-cell-count [x-range y-range]))}))
+
 (defn update-state [state]
+  (let [xs (map first (:live-cells state))
+        ys (map second (:live-cells state))
+        x-range [(if (< (- (apply min xs) 5) (first (:x-range state))) (- (apply min xs) 5) (first (:x-range state))) (if (< (+ 5 (apply max xs)) (last (:x-range state))) (+ 5 (apply max xs)) (last (:x-range state)))]
+        y-range [(if (< (- (apply min ys) 5) (first (:y-range state))) (- (apply min ys) 5) (first (:y-range state))) (if (< (+ 5 (apply max ys)) (last (:y-range state))) (+ 5 (apply max ys)) (last (:y-range state)))]]
   {:live-cells (life/evolve (:live-cells state))
-   :x-range    [(get-x-min state) (get-x-max state)]
-   :y-range    [(get-y-min state) (get-y-max state)]
-   :cell-size  (/ 500 (get-max-cell-count state))})
+   :x-range x-range
+   :y-range y-range
+   :cell-size  (/ (- size 100) (get-max-cell-count [x-range y-range]))}))
 
 (defn draw-state [state]
-  (q/background 240)
+  (q/background 46 47 51)
 
   (let [min-cell (min (get-x-min state) (get-y-min state))
         max-cell (max (get-x-max state) (get-y-max state))
         live-cells (:live-cells state)
-        dead-cells (for [x (range (- min-cell 2) (+ 4 max-cell))
-                         y (range (- min-cell 2) (+ 4 max-cell))]
+        dead-cells (for [x (range (- min-cell 5) (+ 10 max-cell))
+                         y (range (- min-cell 5) (+ 10 max-cell))]
                      [x y])
         all-cells (set/union live-cells dead-cells)]
     (doseq [cell all-cells]
-      (let [center (/ 500 2)
+      (let [center (/ size 2)
             cell-size (:cell-size state)
             cell-radius (/ cell-size 2)
             x (+ center (- (* (first cell) cell-size) cell-radius))
             y (+ center (- (* (second cell) cell-size) cell-radius))]
         (if (contains? live-cells cell)
-          (q/fill 0 255 0)
-          (q/fill 0 0 0))
-        (q/stroke 240)
+          (q/fill 255 166 77)
+          (q/fill 46 47 51))
+        (q/stroke 204 153 255)
         (q/rect x y cell-size cell-size))))
   )
 
-
-(defn -main [& args]
-  (reset! new-world world)
-  (q/defsketch gui
+(q/defsketch gui
              :title "The Game of Life"
-             :size [500 500]
+             :size [size size]
              ; setup function called only once, during sketch initialization.
              :setup setup
              ; update-state is called on each iteration before draw-state.
@@ -86,5 +103,9 @@
              ; This sketch uses functional-mode middleware.
              ; Check quil wiki for more info about middlewares and particularly
              ; fun-mode.
-             :middleware [m/fun-mode]))
+             :middleware [m/fun-mode])
 
+;(def new-world (atom [[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]]))
+;
+;(defn -main [world]
+;  (reset! new-world world))
