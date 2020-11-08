@@ -3,7 +3,14 @@
             [quil.middleware :as m]
             [clojure.set :as set]
             [game-of-life :as life]))
+
 (def size 1040)
+(def world #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]
+                   [0 10] [0 9] [0 8] [0 7] [0 6] [0 5] [0 4] [0 3] [0 2] [0 1] [0 -1] [0 -2] [0 -3] [0 -4] [0 -5] [0 -6] [0 -7] [0 -8] [0 -9] [0 -10]
+                   [-6 5] [-5 5] [-4 5] [-5 6] [-5 4]
+                   [6 5] [5 5] [4 5] [5 6] [5 4]
+                   [-6 -5] [-5 -5] [-4 -5] [-5 -6] [-5 -4]
+                   [6 -5] [5 -5] [4 -5] [5 -6] [5 -4]})
 
 (defn get-x-min [state]
   (let [world (:live-cells state)
@@ -37,26 +44,15 @@
 (defn setup []
   (q/frame-rate 1)
   (q/color-mode :rgb)
-  (let [live-cells #{[10 0] [9 0] [8 0] [7 0] [6 0] [5 0] [4 0] [3 0] [2 0] [1 0] [0 0] [-1 0] [-2 0] [-3 0] [-4 0] [-5 0] [-6 0] [-7 0] [-8 0] [-9 0] [-10 0]
-                     [0 10] [0 9] [0 8] [0 7] [0 6] [0 5] [0 4] [0 3] [0 2] [0 1] [0 -1] [0 -2] [0 -3] [0 -4] [0 -5] [0 -6] [0 -7] [0 -8] [0 -9] [0 -10]
-                     [-6 5] [-5 5] [-4 5] [-5 6] [-5 4]
-                     [6 5] [5 5] [4 5] [5 6] [5 4]
-                     [-6 -5] [-5 -5] [-4 -5] [-5 -6] [-5 -4]
-                     [6 -5] [5 -5] [4 -5] [5 -6] [5 -4]
-                     ;[-7 6] [-6 6] [-5 6] [-6 7] [-5 5]
-                     ;[7 6] [6 6] [5 6] [6 7] [5 5]
-                     ;[-7 -6] [-6 -6] [-5 -6] [-6 -7] [-5 -5]
-                     ;[7 -6] [6 -6] [5 -6] [6 -7] [5 -5]
-                     }
-        xs (map first live-cells)
-        ys (map second live-cells)
+  (let [xs (map first world)
+        ys (map second world)
         x-range [(apply min xs) (apply max xs)]
         y-range [(apply min ys) (apply max ys)]]
     {;:live-cells (set @life/new-world)
-     :live-cells live-cells
-     :x-range x-range
-     :y-range y-range
-     :cell-size (/ (- size 100) (get-max-cell-count [x-range y-range]))}))
+     :live-cells world
+     :x-range    x-range
+     :y-range    y-range
+     :cell-size  (/ (- size 100) (get-max-cell-count [x-range y-range]))}))
 
 (defn update-state [state]
   (let [xs (map first (:live-cells state))

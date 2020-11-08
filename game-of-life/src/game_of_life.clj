@@ -6,17 +6,16 @@
     [(dec x) y] [(inc x) y]
     [(dec x) (dec y)] [x (dec y)] [(inc x) (dec y)]})
 
-(defn count-neighbors [live-cells cell]
-  (count (filter live-cells (get-neighbors cell))))
+(defn count-neighbors [world cell]
+  (count (filter world (get-neighbors cell))))
 
-(defn evolve-cell [live-cells [cell neighbors]]
-  (cond (= 3 neighbors) cell
-        (= 2 neighbors) (when (contains? live-cells cell) cell)))
+(defn evolve-cell [world [cell neighbor-counts]]
+  (cond (= 3 neighbor-counts) cell
+        (= 2 neighbor-counts) (when (contains? world cell) cell)))
 
-(defn evolve [live-cells]
-  (let [live-cell-neighbors (mapcat #(get-neighbors %) live-cells)
-        cells-to-evolve (set/union live-cells live-cell-neighbors)
-        cell-map (zipmap cells-to-evolve (map #(count-neighbors live-cells %) cells-to-evolve))
-        evolved-world (remove nil? (map #(evolve-cell live-cells %) cell-map))]
-    (set evolved-world)))
-
+(defn evolve [world]
+  (let [neighbors (mapcat #(get-neighbors %) world)
+        cells-to-evolve (set/union world neighbors)
+        neighbor-counts (zipmap cells-to-evolve (map #(count-neighbors world %) cells-to-evolve))
+        new-world (map #(evolve-cell world %) neighbor-counts)]
+    (set (remove nil? new-world))))
