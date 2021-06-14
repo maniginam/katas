@@ -22,6 +22,9 @@
 				(apply min scores)
 				(apply max scores)))
 
+(defn find-acceptable-boxes [boxes box-scores best-score]
+		(remove nil? (map #(when (= best-score %1) %2) box-scores boxes)))
+
 (defn score-boxes [board player depth]
 		(for [box (filter integer? board)]
 				(let [board (replace {box (get-piece player)} board)]
@@ -29,12 +32,8 @@
 								(set-score board player depth)
 								(minimax player (score-boxes board (* -1 player) (inc depth)))))))
 
-(defn is-best-box [score box-score box]
-		(when (= score box-score) box))
-
 (defn find-best-box [board player]
 		(let [boxes      (filter integer? board)
 								box-scores (score-boxes board player 0)
-								best-score (minimax (* player -1) box-scores)
-								best-boxes (remove nil? (map #(is-best-box best-score %1 %2) box-scores boxes))]
-				(first best-boxes)))
+								best-score (minimax (* player -1) box-scores)]
+				(first (find-acceptable-boxes boxes box-scores best-score))))
