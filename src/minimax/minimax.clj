@@ -4,7 +4,7 @@
 
 (defn is-win? [board]
 		(some true? (map #(and (= (nth board (first %)) (nth board (second %)))
-																					(= (nth board (second %)) (nth board (last %)))) wins)))
+																						(= (nth board (second %)) (nth board (last %)))) wins)))
 
 (defn is-game-over? [board]
 		(or (is-win? board) (every? string? board)))
@@ -25,15 +25,19 @@
 (defn find-acceptable-boxes [boxes box-scores best-score]
 		(remove nil? (map #(when (= best-score %1) %2) box-scores boxes)))
 
-(defn score-boxes [board player depth]
-		(for [box (filter integer? board)]
-				(let [board (replace {box (get-piece player)} board)]
-						(if (is-game-over? board)
-								(set-score board player depth)
-								(minimax player (score-boxes board (* -1 player) (inc depth)))))))
+(defn open-boxes [board]
+		(filter integer? board))
+
+(defn find-best-score [board player depth]
+		(if (is-game-over? board)
+				(set-score board player depth)
+				(let [boards (map #(assoc board % (get-piece (* player -1))) (open-boxes board))
+										scores (map #(find-best-score % (* player -1) (inc depth)) boards)]
+						(minimax player scores))))
 
 (defn find-best-box [board player]
-		(let [boxes      (filter integer? board)
-								box-scores (score-boxes board player 0)
+		(let [boxes      (open-boxes board)
+								boards     (map #(assoc board % (get-piece player)) boxes)
+								box-scores (map #(find-best-score % player 0) boards)
 								best-score (minimax (* player -1) box-scores)]
 				(first (find-acceptable-boxes boxes box-scores best-score))))
