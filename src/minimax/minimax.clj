@@ -12,21 +12,17 @@
 (defn get-piece [player]
 		(if (= 1 player) "X" "O"))
 
-(defn set-score [board player depth]
-		(if (is-win? board)
-				(if (= 1 player) (- 10 depth) (- depth 10))
-				0))
-
-(defn minimax [player scores]
-		(if (= 1 player)
-				(apply min scores)
-				(apply max scores)))
-
-(defn find-acceptable-boxes [boxes box-scores best-score]
-		(remove nil? (map #(when (= best-score %1) %2) box-scores boxes)))
-
 (defn open-boxes [board]
 		(filter integer? board))
+
+(defn set-score [board player depth]
+		(if (is-win? board) (* (- 10 depth) player) 0))
+
+(defn minimax [player scores]
+		(if (= 1 player) (apply min scores) (apply max scores)))
+
+(defn best-boxes [boxes box-scores best-score]
+		(remove nil? (map #(when (= best-score %1) %2) box-scores boxes)))
 
 (defn find-best-score [board player depth]
 		(if (is-game-over? board)
@@ -40,4 +36,4 @@
 								boards     (map #(assoc board % (get-piece player)) boxes)
 								box-scores (map #(find-best-score % player 0) boards)
 								best-score (minimax (* player -1) box-scores)]
-				(first (find-acceptable-boxes boxes box-scores best-score))))
+				(first (best-boxes boxes box-scores best-score))))
