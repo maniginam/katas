@@ -39,13 +39,14 @@
 (def steps 2000)
 
 (defn setup []
-  (q/frame-rate 10)
+  (q/frame-rate 5)
   (q/color-mode :rgb)
   (let [xs      (map first world)
         ys      (map second world)
         x-range [-10 10]
         y-range [-10 10]]
-    {:dance {:steps steps :dark-cells [] :ant-cell [0 0] :prev-cell nil}
+    {:ant [0 0]
+     :dance {:steps steps :dark-cells [] :ant-cell [0 0] :prev-cell nil}
      :x-range x-range
      :y-range y-range
      :cell-size (/ (- size 100) (get-max-cell-count [x-range y-range]))}))
@@ -64,13 +65,27 @@
                      (last (:x-range state)))])
         y-range (if (or (empty? ys) (< (apply min ys) 10))
                   [-10 10]
-                  [(if (< (- (apply min ys) 5) (first (:y-range state))) (- (apply min ys) 5) (first (:y-range state))) (if (< (+ 5 (apply max ys)) (last (:y-range state))) (+ 5 (apply max ys)) (last (:y-range state)))])]
-    {:dance (ant/gui-dance! dance)
+                  [(if (< (- (apply min ys) 5) (first (:y-range state))) (- (apply min ys) 5) (first (:y-range state))) (if (< (+ 5 (apply max ys)) (last (:y-range state))) (+ 5 (apply max ys)) (last (:y-range state)))])
+        dance (ant/gui-dance! dance)]
+    {:ant (:ant-cell dance)
+     :dance dance
      :x-range    x-range
      :y-range    y-range
      :cell-size  (/ (- size 100) (get-max-cell-count [x-range y-range]))}))
 
-(defn draw-state [{:keys [dance] :as state}]
+(defn draw-ant [x y cell-radius]
+  (q/fill 0 0 0)
+  (q/ellipse (+ x cell-radius) (- (+ y cell-radius) 8) 8 8)
+  (q/ellipse (+ x cell-radius) (+ y cell-radius) 10 11)
+  (q/ellipse (+ x cell-radius) (+ y cell-radius 11) 10 12)
+  (q/line (+ x cell-radius) (+ y cell-radius) (- (+ x cell-radius) 10) (- (+ y cell-radius) 10))
+  (q/line (+ x cell-radius) (+ y cell-radius) (+ (+ x cell-radius) 10) (+ (+ y cell-radius) 10))
+  (q/line (+ x cell-radius) (+ y cell-radius) (- (+ x cell-radius) 10) (+ y cell-radius))
+  (q/line (+ x cell-radius) (+ y cell-radius) (+ (+ x cell-radius) 10) (+ y cell-radius))
+  (q/line (+ x cell-radius) (+ y cell-radius) (- (+ x cell-radius) 10) (- (+ y cell-radius) 10))
+  (q/line (+ x cell-radius) (+ y cell-radius) (+ (+ x cell-radius) 10) (+ (+ y cell-radius) 10)))
+
+(defn draw-state [{:keys [dance ant] :as state}]
   (q/background 46 47 51)
 
   (let [dark-cells (:dark-cells dance)
@@ -96,7 +111,8 @@
           (q/fill 255 166 77)
           (q/fill 46 47 51))
         (q/stroke 204 153 255)
-        (q/rect x y cell-size cell-size))))
+        (q/rect x y cell-size cell-size)
+        (when (= cell ant) (draw-ant x y cell-radius)))))
   )
 
 (q/defsketch gui
